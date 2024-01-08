@@ -47,6 +47,7 @@ const StyledLogOutButton = styled(StyledLogInButton)`
 
 export default function Login() {
   const { data: session } = useSession();
+  console.log(session);
   return (
     <StyledLogIn>
       {session && (
