@@ -1,10 +1,10 @@
+import useSWR from "swr";
+import { useSession } from "next-auth/react";
+import Head from "next/head";
 import ShoppingListItem from "@/components/ShoppingListItem";
 import { StyledTitleContainer, StyledTitle } from "@/components/ListItems";
 import DeleteConfirmation from "@/components/DeleteConfirmation";
-import Head from "next/head";
 import LottieFile from "@/components/LottieFile";
-import useSWR from "swr";
-import { useSession } from "next-auth/react";
 
 export default function ShoppingList() {
   const {
