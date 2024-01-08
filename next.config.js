@@ -4,7 +4,11 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["res.cloudinary.com", "avatars.githubusercontent.com"],
+    domains: [
+      "res.cloudinary.com",
+      "avatars.githubusercontent.com",
+      "images.90s90s.de",
+    ],
   },
   reactStrictMode: true,
   webpack(config) {

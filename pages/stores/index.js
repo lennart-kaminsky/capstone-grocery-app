@@ -1,6 +1,6 @@
+import Head from "next/head";
 import StoreList from "@/components/StoreList";
 import Icon from "@/components/Icons";
-import Head from "next/head";
 import { StyledCreateLink } from "@/components/Buttons";
 
 export default function Stores() {

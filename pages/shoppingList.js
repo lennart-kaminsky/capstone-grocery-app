@@ -1,9 +1,10 @@
+import useSWR from "swr";
+import { useSession } from "next-auth/react";
+import Head from "next/head";
 import ShoppingListItem from "@/components/ShoppingListItem";
 import { StyledTitleContainer, StyledTitle } from "@/components/ListItems";
 import DeleteConfirmation from "@/components/DeleteConfirmation";
-import Head from "next/head";
 import LottieFile from "@/components/LottieFile";
-import useSWR from "swr";
 
 export default function ShoppingList() {
   const {
@@ -12,6 +13,14 @@ export default function ShoppingList() {
     error: errorProducts,
     mutate: mutateProducts,
   } = useSWR("/api/products");
+  const { data: session } = useSession();
+
+  if (!session && !isLoadingProducts)
+    return (
+      <main>
+        <LottieFile variant="error" />;
+      </main>
+    );
   if (isLoadingProducts)
     return (
       <LottieFile variant="loadingProductsAndStores">
